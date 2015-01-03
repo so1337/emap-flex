@@ -1,0 +1,382 @@
+<!doctype html>
+<!--[if IE 7 ]><html class="ie7 ie"><![endif]-->
+<!--[if IE 8 ]><html class="ie8 ie"><![endif]-->
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<!---[if (gt IE 9)|!(IE)]><!-->
+<html><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Event Map</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="media/images/favicon.ico" rel="shortcut icon" type="image/x-icon">	
+	<link rel="stylesheet" href="media/chosen.css">
+	<link rel="stylesheet" href="media/jquery.fancybox.css">
+	<link rel="stylesheet" href="media/jquery.bxslider.css">
+	<link href="media/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="media/styles.css">	
+
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="media/jquery-1.10.2.js"></script>
+	<script src="media/chosen.jquery.js"></script>
+	<script src="media/jquery.fancybox.js"></script>
+	<script src="media/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script src="media/jquery.bxslider.min.js"></script>
+	<script src="media/jquery-ui-1.10.4.custom.js"></script>
+	<script src="media/functions.js" type="text/javascript"></script>
+</head>
+<body>
+<header id="header" class="page row  clearfix">
+				<div class="header_cont">
+			<a href="#" class="logo  pull-left " title=""><img src="media/images/logo.png" alt="Event Map"></a>
+			<div class="nav">
+			<nav class="header-nav  pull-left">
+				<a href="#" class="item home">
+					<span class="item-bg"></span>					
+					<i class="icon"></i>
+					<span class="helper"></span>						
+				</a>
+				<a href="#" class="item conference">
+					<span class="item-bg"></span>
+					<span class="item-title">Конференции</span>
+					<span class="helper"></span>
+				</a>
+				<a href="#" class="item exhibition">
+					<span class="item-bg"></span>					
+					<span class="item-title">Выставки и презентации</span>
+					<span class="helper"></span>						
+				</a>
+				<a href="#" class="item training">
+					<span class="item-bg"></span>					
+					<span class="item-title">Тренинги и семинары</span>
+					<span class="helper"></span>					
+				</a>
+				<a href="#" class="item lecture">
+					<span class="item-bg"></span>					
+					<span class="item-title">Лекции и занятия</span>
+					<span class="helper"></span>					
+				</a>
+			</nav>
+			</div>
+			<div class="personal  pull-right">
+				<form class="city-form" action="/" method="post">
+					<label for="header-city-select">Город</label>
+					<select data-placeholder=" " class="chosen-select" tabindex="2" id="header-city-select">
+						<option value=""></option>
+						<option value="Одесса">Одесса</option>
+						<option value="Киев">Киев</option>
+						<option value="Харьков">Харьков</option>
+						<option value="Львов">Львов</option>
+					</select>
+				</form>
+				<a href="#" class="open-cabinet">Мой кабинет</a><br>
+				<a href="#">Регистрация</a>
+			</div>
+			<div class="enter-cabinet">
+				<h1>Мой кабинет</h1>
+				<div class="field">
+					<label class="label" for="cabinet-login">Логин</label>
+					<input id="cabinet-login" type="text" class="input-text">
+				</div>
+				<div class="field">
+					<label class="label" for="cabinet-pass">Пароль</label>
+					<input id="cabinet-pass" type="password" class="input-text">
+				</div>
+				<button class="bttn">Войти</button>
+				<p>Войти через соцсети</p>
+				<p class="soc">
+					<a class="item f" href="#"><i class="soc-icon"></i></a>
+					<a class="item t" href="#"><i class="soc-icon"></i></a>
+					<a class="item v" href="#"><i class="soc-icon"></i></a>
+				</p>
+				<a href="#">Восстановить пароль</a>
+				<a href="#">Регистрация</a>
+			</div>
+			</div>
+		</header>
+
+	<div class="cent" >
+		<div class="content page clearfix" >
+			<div class="aside pull-left" style="margin-right:100px;">
+				<a href="#" class="bttn add-event">Добавить мероприятие</a>
+				<div class="user-search">
+					<input type="text" class="input-text hint" value="Поиск" data-hint="Поиск">
+					<button class="search-bttn"></button>					
+				</div>
+				<form class="aside-filter-form" action="/" method="post">
+					<h2>Фильтр мероприятий</h2>	
+					<ul class="types">
+						<li><a href="#" class="hot"><i class="icon"></i>горячие</a></li>
+						<li><a href="#" class="recommend"><i class="icon"></i>рекомендуемые</a></li>
+						<li><a href="#" class="repeat"><i class="icon"></i>повторяющиеся</a></li>
+					</ul>
+				<fieldset class="">
+						<legend>Дата <i class="icon anchor-close"></i></legend>
+						<div class="from-to to-close">
+							<span class="range">с &nbsp;</span>
+							<input type="text" class="range-date hint" value="" data-hint="20.01.2012">
+							<span class="range">по </span>	
+							<input type="text" class="range-date" value="">
+							<button class="bttn orange ok">ОК</button>
+							<span class="spacer"></span>
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<legend>Тематика <i class="icon anchor-close"></i></legend>
+						<div class="to-close">
+							<select data-placeholder=" " class="chosen-select" multiple tabindex="-1" id="">
+								<option value="Бизнес">Бизнес</option>
+								<option value="Менеджмент">Менеджмент</option>
+								<option value="Экономика">Экономика</option>
+								<option value="IT">IT</option>
+								<option value="Бизнес">Бизнес</option>
+								<option value="Менеджмент">Менеджмент</option>
+								<option value="Экономика">Экономика</option>
+								<option value="IT">IT</option>
+							</select>
+						</div>			
+					</fieldset>
+					<fieldset class="">
+						<legend>Стоимость <i class="icon anchor-close"></i></legend>
+						<div class="from-to to-close">
+							<span class="range">от</span>
+							<input type="text" class="range-date hint" value="" data-hint="200">
+							<span class="range">до</span>	
+							<input type="text" class="range-date" value="">
+							<button class="bttn orange ok">ОК</button>
+							<span class="spacer"></span>
+						</div>
+					</fieldset>
+					<fieldset class="coach">
+						<legend>Тренер <i class="icon anchor-close"></i></legend>		
+						<div class="to-close">
+						    <select data-placeholder=" " class="chosen-select" multiple tabindex="-1" id="coach-select">
+								<option value=""></option>
+								<option value="Мария Васнецова">Мария Васнецова</option>
+								<option value="Мария Мельник">Мария Мельник</option>
+								<option value="Мазур Василий">Мазур Василий</option>
+								<option value="Мария Васнецова">Мария Васнецова</option>
+								<option value="Мария Мельник">Мария Мельник</option>
+								<option value="Мазур Василий">Мазур Василий</option>
+								<option value="Мария Васнецова">Мария Васнецова</option>
+								<option value="Мария Мельник">Мария Мельник</option>
+								<option value="Мазур Василий">Мазур Василий</option>
+							</select>
+						</div>
+					</fieldset>
+					<fieldset class="last">
+						<legend>Организаторы <i class="icon anchor-close"></i></legend>			
+						<div class="to-close">
+						    <select data-placeholder=" " class="chosen-select" multiple tabindex="-1" id="sponsor-select">
+								<option value=""></option>
+								<option value="Мария Васнецова">Мария Васнецова</option>
+								<option value="Мария Мельник">Мария Мельник</option>
+								<option value="Мазур Василий">Мазур Василий</option>
+								<option value="Мария Васнецова">Мария Васнецова</option>
+								<option value="Мария Мельник">Мария Мельник</option>
+								<option value="Мазур Василий">Мазур Василий</option>
+								<option value="Мария Васнецова">Мария Васнецова</option>
+								<option value="Мария Мельник">Мария Мельник</option>
+								<option value="Мазур Василий">Мазур Василий</option>
+							</select>
+						</div>
+					</fieldset>
+					<button class="bttn orange apply">Применить <i class="icon right-arrow"></i></button>
+				</form>
+			</div>
+			<div class="center pull-right">
+				<div class="breadcrumbs">
+					<a href="#">Главная</a> »
+					<a href="#">Фильтры</a> »
+					<a href="#">Предстоящие</a> »
+					<span class="cur">Быстрые результаты. Эффект мотивации</span>
+				</div>
+				<div class="top clearfix">
+					<div class="left pull-left">
+						<div class="time-tab">
+							<a class="coming cur" href="#">Предстоящие</a>
+							<a class="actual" href="#">Текущие</a>
+							<a class="past" href="#">Прошедшие</a>
+						</div>	
+					</div>
+					<div class="right pull-right">
+						<div class="action">
+							<a class="bttn red" href="#">Зарегистрироваться</a>
+							<a class="bttn orange" href="#">В закладки</a>
+						</div>
+					</div>
+				</div>	
+				<div class="right pull-right">
+					<div class="on-map clearfix">
+						<ipull-rightame src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10989.16183803342!2d30.695091659312933!3d46.48256070760802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c631f99a69df63%3A0x21fdbf4b0cab6d56!2z0J_QsNGA0LrQvtCy0LDRjyDRg9C7Lg!5e0!3m2!1sru!2sua!4v1398928307373" pull-rightameborder="0"></ipull-rightame>
+						<a class="map-link pull-left" href="#">Показать на карте</a>
+						<a class="map-link pull-right" href="#">Как добраться?</a>
+					</div>
+					<div class="video">
+						<span class="video-title">Эффект мотивации</span>
+						<ipull-rightame width="255" height="191" src="http://www.youtube.com/embed/zKCW-hZcI5w" pull-rightameborder="0" allowfullscreen></ipull-rightame>
+					</div>
+				</div>
+				<article class="article-event">
+					<div class="top-line">
+						<a href="#" class="hot"><i class="icon"></i></a>
+						<a class="event-type" href="#">корпоративный тренинг</a>
+						<div class="extra pull-right">
+								<a class="tweet" href="#">Tweet</a>
+								<a class="cup" href="#"><i class="icon"></i>10</a>
+						</div>							
+					</div>
+					<h1>Быстрые результаты. Эффект мотивации</h1>
+					<p><span>Место проведения:</span> Одесса, ул. Греческая, 1а</p>
+					<p><span>Время проведения:</span> с 5 мая по 7 мая, 11.00-18.00</p>
+					<p><span>Стоимость участия:</span> 1800 грн</p>
+					<div class="who">
+						<h4>Кто пойдёт:</h4>
+						<div class="bxslider">
+							<div class="slide"><img src="media/images/speaker_sm1.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm2.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm3.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm5.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm1.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm2.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm3.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm5.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm2.jpg" alt=""></div>
+							<div class="slide"><img src="media/images/speaker_sm3.jpg" alt=""></div>
+						</div>
+						<a href="#" class="bttn orange">Я пойду</a>
+					</div>
+					<div class="speakers cleapull-rightix">
+						<h4>Спикеры: </h4>
+						<div class="photos pull-left">
+							<a class="item main fancybox" rel="gallery1" href="media/images/speaker4.jpg">
+								<img src="media/images/speaker4.jpg" alt="">
+							</a>
+							<a class="item fancybox" rel="gallery1" href="media/images/speaker_sm1.jpg">
+								<img src="media/images/speaker_sm1.jpg" alt="">
+							</a>
+							<a class="item fancybox" rel="gallery1" href="media/images/speaker_sm2.jpg">
+								<img src="media/images/speaker_sm2.jpg" alt="">
+							</a>
+							<a class="item fancybox" rel="gallery1" href="media/images/speaker_sm3.jpg">
+								<img src="media/images/speaker_sm3.jpg" alt="">
+							</a>
+						</div>
+						<div class="resume"><p>Андреас Хауг является соучредителем и управляющим партнером фонда e.ventures (Гамбург/Сан-Франциско), венчурный капитал которого составляет свыше $600 млн. Фонд инвестирует в проекты в цифровой сфере через свои географически целевые фонды в Европе, России, США, Бразилии и Китае на посевной и ранней стадиях.</p></div>
+					</div>
+					<h3>ДЛЯ КОГО ТРЕНИНГ:</h3>
+					<p>Данный тренинг предназначен для руководителей и топ-менеджеров компаний, руководителей подразделений и HR-специалистов, ответственных за разработку и внедрение систем материального и нематериального стимулирования персонала.</p>
+					<h3>ЦЕЛИ ТРЕНИНГА:</h3>
+					<p>Сформировать у участников целостную и детальную систему материальной и нематериальной мотивации персонала - от формирования источника мотивации – дополнительной прибыли компании до системы постановки целей и KPI и расчетов премий и бонусов за выполнение планов каждым сотрудником. Предоставить участникам практические методы и технологии, позволяющие самостоятельно разработать для своей компании эффективную систему стимулирования, обеспечивающую рост прибыльности и эффективности для компании, с другой стороны рост удовлетворённости ценных сотрудников.</p>
+					<h3>КАЖДОМУ УЧАСТНИКУ ПРЕДОСТАВЛЯЕТСЯ:</h3>
+					<ul>
+						<li>Учебно–методический материал</li>
+						<li>Диплом о повышении квалификации по данной тематике</li>
+					</ul>
+					<h3>ПРОГРАММА ТРЕНИНГА:</h3>
+					<h4>Модуль №1. <span>Бизнес в стиле «MOTIVATION»</span></h4>
+					<ul>
+						<li>Прибыль и мотивация – что общего? Насколько можно повысить прибыль, повысив мотивацию сотрудников</li>
+						<li>Вы уверенны, что выдают Ваши сотрудники – это все на что способны? Как получить больше отдачи от каждого сотрудника</li>
+						<li>Сегодня в бизнесе могут обеспечить прорыв только мотиваторы. Победный круг мотивации</li>
+					</ul>			
+					<h4>Модуль №2. <span>ДРАЙВЕРЫ РОСТА МОТИВАЦИИ</span></h4>
+					<ul>
+						<li>Трансформационная мотивация. «Дайте мне точку опоры на мотивацию, и я переверну весь мир». Как изменить поведение сотрудников.</li>
+						<li>«Правильные люди в команде». Поиск людей с высокой внутренней мотивацией</li>
+						<li>Какие факторы определяют, будет ли человек работать над достижением цели компании?</li>
+						<li>Как цели зажигают сотрудников? Как поддерживать огонь в глазах? 3 кита высокой мотивации</li>
+						<li>Когда в работе ищут опору своему собственному «Я»</li>
+						<li>Работа после работы, когда хочется работать круглые сутки. Состояние «потока».</li>
+						<li>Тестируем на себе. Что Вас мотивирует кроме зарплаты</li>
+						<li>У Вас не лучшие времена? Знаете, как нужно мотивировать?</li>
+						<li>Боязнь поражения и другие причины отсутствия мотивации</li>
+						<li>Таблетка от демотивации. Почему увольняются сотрудники?</li>
+						<li>Преступление и наказание. Как ругать провинившихся. Осторожно – эффект домино.</li>
+						<li>Влейте в работу душу. Нематериальное стимулирование</li>
+					</ul>
+					<h4>Модуль №3. <span>ДЕНЬГИ ПРАВЯТ БАЛОМ. БИЗНЕС – ПРОРЫВ.</span></h4>
+					<ul>
+						<li>За какие результаты платить бонусы топ-менеджерам, линейным менеджерам, рядовым сотрудникам.</li>
+						<li>Что Вы покупаете – время или результат?</li>
+						<li>KPI высокого полета. Финансовая модель прибыли «Логолекс». 7 уровней прибыли</li>
+						<li>Из чего платить? Источник премиального фонда</li>
+						<li>Как рассчитать необходимый штат?</li>
+						<li>Как не завысить или как не занизить плановые показатели?</li>
+						<li>Как утвердить рост фонда оплаты труда? Упражнение: расчет дополнительной прибыли</li>
+						<li>«Лебедь рак и щука» или как сфокусировать сотрудников на общие цели?</li>
+						<li>Рост фонда оплаты труда – это хорошо или плохо?</li>
+						<li>Существующий фонд оплаты труда – это много или мало?</li>
+						<li>Как связать прибыль и фонд оплаты труда?</li>
+						<li>Низкий фонд оплаты труда – думаете это хорошо?</li>
+						<li>Все поработали хорошо и всем нужно выплатить премии, а у компании убытки? Спусковой крючок.</li>
+						<li>Платить или не платить, если нет прибыли</li>
+						<li>Где «порог» и «потолок» фонда оплаты труда?</li>
+						<li>Процентомания: плюсы и минусы</li>
+						<li>Когда платить?</li>
+						<li>Как поделиться рисками с сотрудниками?</li>
+					</ul>
+					<h4>Модуль №4. <span>АЛИБИ НЕ ПОМОЖЕТ - 3D ОЦЕНКА ПЕРСОНАЛА ПО KPI</span></h4>
+					<ul>
+						<li>Как выявить лучших и худших? Оценка результативности. Кто из сотрудников боится оценки</li>
+						<li>Оценка по финансовым KPI топ-менеджеров, линейных менеджеров, рядовых сотрудников</li>
+						<li>Должны ли премии зависеть исключительно от финансовых показателей</li>
+						<li>Как оценить творчество? Оценка исполнения Стандартов работы, SMART-задач</li>
+						<li>Сотрудники хотят больше получать? Расширяем зоны ответственности</li>
+						<li>Цена вопроса. Количество показателей и приоритеты.</li>
+						<li>Как KPI влияют на размер оплаты труда сотрудников</li>
+						<li>Как сделать цели компании целями сотрудников? Симптомы отсутствия коллективной ответственности</li>
+						<li>Выплачивать ли индивидуальный бонус, если компания не достигла нужных целей?</li>
+					</ul>
+					<a href="#" class="bttn orange register">Зарегистрироваться</a><a class="cup" href="#"><i class="icon"></i>10</a>
+				</article>
+			</div>
+		</div>
+		<div class="mail page">
+			<form class="mail-form" action="/" method="post">
+				<span>Подписаться на рассылку</span>
+				<input type="text" class="input-text hint" value="адрес электронной почты" data-hint="адрес электронной почты">
+				<button class="bttn yellow sign-in">Подписаться</button>
+			</form>
+		</div>
+		
+			<footer id="footer">
+			<div class="footer-wrap page clearfix">
+				<div class="left  pull-left clearfix foot_div" >
+					<nav class="footer-nav">
+						<a href="#" class="item home cur"><i class="icon"></i></a>
+						<a href="#" class="item">Конференции</a>
+						<a href="#" class="item">Выставки и презентации</a>
+						<a href="#" class="item">Тренинги и семинары</a>
+						<a href="#" class="item">Лекции и занятия</a>
+						<span class="spacer"></span>
+					</nav>
+					<div class="copy  pull-left">© Events Map 2014</div>
+					<div class="links  pull-right">
+						<a href="#">О проекте</a>
+						<a href="#">Реклама</a>
+					</div>
+				</div>
+				<div class="right  pull-right foot_div">
+					<form class="city-form" action="/" method="post">
+						<label for="footer-city-select">Город</label>
+						<select data-placeholder=" " class="chosen-select" tabindex="2" id="footer-city-select">
+							<option value=""></option>
+							<option value="Одесса">Одесса</option>
+							<option value="Киев">Киев</option>
+							<option value="Харьков">Харьков</option>
+							<option value="Львов">Львов</option>
+						</select>
+					</form>
+					<p class="soc">
+						<a class="item f" href="#"><i class="soc-icon"></i></a>
+						<a class="item t" href="#"><i class="soc-icon"></i></a>
+						<a class="item last v" href="#"><i class="soc-icon"></i></a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
